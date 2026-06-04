@@ -96,7 +96,7 @@ with tab1:
 with tab2:
     st.info('Click on any cell and Press CTRL+F to search, click below button to see if ur data is reflected')
     if st.button('Refresh Data', type='primary'):
-        con.connect('/tmp/student.db')
+        con = sql.connect('/tmp/student.db')
         results = pd.read_sql("SELECT * FROM private", con)
         st.dataframe(results)
         st.rerun()
