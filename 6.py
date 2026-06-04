@@ -3,13 +3,18 @@ import pandas as pd
 import sqlite3 as sql
 import matplotlib.pyplot as plt
 import plotly.express as px
-import shutil
-import os
+import libsql
 
-if not os.path.exists("/tmp/student.db"):
-    shutil.copy("student.db", "/tmp/student.db")
+turso_token = 'eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3ODA2MDkwNTQsImlkIjoiMDE5ZTk0OTAtYjQwMS03ZTVkLWE1ODktZTdkYmNlOWJhZDc4IiwicmlkIjoiNmU5NzBkNzItZjVmZC00Yjk1LTliMzktYzZkYWJjNjUzYmMwIn0.91G1zVEJeaCO-K_1pV36W7uAFpcZhkq5J7Jm7x3WvvxpHIbBTjWrPNVRn7nLkECFnQRkYaVYKqplKRIvfbSPAw'
+api = 'libsql://student-dheerajtsv.aws-ap-south-1.turso.io'
 
-con = sql.connect('/tmp/student.db')
+# con = sql.connect('student.db')
+con = libsql.connect(
+    database=api,
+    auth_token = turso_token
+)
+
+
 cur = con.cursor()
 results = pd.read_sql("SELECT * FROM private", con)
 
