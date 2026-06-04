@@ -124,7 +124,7 @@ with tab3:
                 check = f'SELECT "NAME OF THE STUDENT" FROM private WHERE "NAME OF THE STUDENT"="{name}"'
                 if pd.read_sql(check,con).size == 0:
 
-                    cur.execute('''INSERT INTO private VALUES(?,?,?,?,?,?,?,?,?,?)''',data)
+                    cur.execute('''INSERT INTO private VALUES(?,?,?,?,?,?,?,?,?,?,?)''',data)
                     con.commit()
                     st.success("Data submitted successfully")
                 else:
