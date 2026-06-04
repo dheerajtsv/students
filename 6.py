@@ -123,7 +123,11 @@ with tab3:
             if selectBox:
                 temp='Yes'
             data = (name,university,program, honours, semester, domain, gen, dom, total, temp)
-            con = sql.connect('student.db')
+            con = libsql.connect(
+                database=api,
+                auth_token = turso_token
+            )
+
             cur = con.cursor()
             try:
                 check = f'SELECT "NAME OF THE STUDENT" FROM private WHERE "NAME OF THE STUDENT"="{name}"'
