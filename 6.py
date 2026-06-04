@@ -99,7 +99,7 @@ with tab1:
         st.markdown("📱 +91 9618989124")
         st.markdown("🌐 www.example.com")
 with tab2:
-    st.info('Click on any cell and Press CTRL+F to search')
+    st.info('Click on any cell and Press CTRL+F to search, click on refresh after inserting data to get new row')
     results = pd.read_sql("SELECT * FROM private", con)
     if st.button('REFRESH',type='primary'):
         st.rerun()
