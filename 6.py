@@ -99,12 +99,7 @@ with tab1:
         st.markdown("📱 +91 9618989124")
         st.markdown("🌐 www.example.com")
 with tab2:
-    st.info('Click on any cell and Press CTRL+F to search, click below button to see if ur data is reflected')
-    if st.button('Refresh Data', type='primary'):
-        con = sql.connect('/tmp/student.db')
-        results = pd.read_sql("SELECT * FROM private", con)
-        st.dataframe(results)
-        st.rerun()
+    st.info('Click on any cell and Press CTRL+F to search')
     results = pd.read_sql("SELECT * FROM private", con)
     st.dataframe(results)
     with st.expander('READ BEFORE INSERTION!'):
