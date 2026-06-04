@@ -129,7 +129,7 @@ with tab3:
             )
 
             cur = con.cursor()
-            try:
+            if True:
                 check = f'SELECT "NAME OF THE STUDENT" FROM private WHERE "NAME OF THE STUDENT"="{name}"'
                 if pd.read_sql(check,con).size == 0:
 
@@ -138,8 +138,8 @@ with tab3:
                     st.success("Data submitted successfully")
                 else:
                     st.error('Student Already exist!')
-            except:
-                st.error('Something went wrong')
+            # except:
+            #     st.error('Something went wrong')
             cur.close()
             con.close()
 
