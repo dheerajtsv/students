@@ -101,6 +101,8 @@ with tab1:
 with tab2:
     st.info('Click on any cell and Press CTRL+F to search')
     results = pd.read_sql("SELECT * FROM private", con)
+    if st.button('REFRESH',type='primary'):
+        st.rerurn()
     st.dataframe(results)
     with st.expander('READ BEFORE INSERTION!'):
         st.write('''For now, only Inserting operation has been enabled.Double check the data before submitting''')
