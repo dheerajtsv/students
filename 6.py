@@ -3,9 +3,13 @@ import pandas as pd
 import sqlite3 as sql
 import matplotlib.pyplot as plt
 import plotly.express as px
+import shutil
+import os
 
+if not os.path.exists("/tmp/student.db"):
+    shutil.copy("student.db", "/tmp/student.db")
 
-con = sql.connect('student.db')
+con = sql.connect('/tmp/student.db')
 cur = con.cursor()
 results = pd.read_sql("SELECT * FROM private", con)
 
