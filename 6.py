@@ -111,6 +111,7 @@ with tab3:
         gen = st.slider('Input General Management Score (out of 50)',min_value=0,max_value=50)
         dom = st.slider('Domain Specific Score (out of 50)',min_value=0,max_value=50)
         total = st.slider('Total Score (out of 100)',min_value=0,max_value=100)
+        selectBox = st.checkbox('Would the student like to consent to promotion of him for masters?')
         submitted = st.form_submit_button('Submit')
         if submitted:
             temp = 'No'
